@@ -1,8 +1,14 @@
 # A WordPress Plugin Template #
 
-### Original Released: ###
+A template for creating plugins in WordPress. 
 
-A template for creating plugins in WordPress. See full article here: http://www.yaconiello.com/blog/how-to-write-wordpress-plugin/. Settings sections were refactored for full explanation see: http://www.yaconiello.com/blog/how-to-handle-wordpress-settings/. http://www.yaconiello.com/blog/how-to-write-wordpress-plugin/
+### Original Released ###
+
+**See full article here:**
+http://www.yaconiello.com/blog/how-to-write-wordpress-plugin/
+
+**Settings sections were refactored for full explanation see:**
+http://www.yaconiello.com/blog/how-to-handle-wordpress-settings/
 
 Copyright 2012  Francis Yaconiello  (email : francis@yaconiello.com)
 
