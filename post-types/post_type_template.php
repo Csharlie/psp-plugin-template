@@ -38,20 +38,47 @@ if(!class_exists('Post_Type_Template'))
     	 */
     	public function create_post_type()
     	{
-    		register_post_type(self::POST_TYPE,
-    			array(
-    				'labels' => array(
-    					'name' => __(sprintf('%ss', ucwords(str_replace("_", " ", self::POST_TYPE)))),
-    					'singular_name' => __(ucwords(str_replace("_", " ", self::POST_TYPE)))
-    				),
-    				'public' => true,
-    				'has_archive' => true,
-    				'description' => __("This is a sample post type meant only to illustrate a preferred structure of plugin development"),
-    				'supports' => array(
-    					'title', 'editor', 'excerpt', 
-    				),
-    			)
-    		);
+    		$labels = array(
+                'name'                => __( sprintf(ucwords(str_replace("_", " ", self::POST_TYPE)))),
+                'singular_name'       => __( ucwords(str_replace("_", " ", self::POST_TYPE))),
+                'menu_name'           => __( ucwords(str_replace("-", " ", self::POST_TYPE)), 'text_domain' ),
+                'name_admin_bar'      => __( 'Custom Post', 'text_domain' ),
+                'parent_item_colon'   => __( 'Parent Custom Post:', 'text_domain' ),
+                'all_items'           => __( 'All Custom Posts', 'text_domain' ),
+                'add_new_item'        => __( 'Add New Custom Post', 'text_domain' ),
+                'add_new'             => __( 'Add New', 'text_domain' ),
+                'new_item'            => __( 'New Custom Post', 'text_domain' ),
+                'edit_item'           => __( 'Edit Custom Post', 'text_domain' ),
+                'update_item'         => __( 'Update Custom Post', 'text_domain' ),
+                'view_item'           => __( 'View Custom Post', 'text_domain' ),
+                'search_items'        => __( 'Search Custom Post', 'text_domain' ),
+                'not_found'           => __( 'Not found Custom Post(s)', 'text_domain' ),
+                'not_found_in_trash'  => __( 'Not found Custom Post(s) in Trash', 'text_domain' )
+            );
+
+            $args = array(
+                'label'               => __( ucwords(str_replace("_", " ", self::POST_TYPE)), 'text_domain' ),
+                'description'         => __( 'Custom Post Type for PSP WP Plugin', 'text_domain' ),
+                'labels'              => $labels,
+                'supports'            => array( 'title', 'editor', 'excerpt', 'thumbnail', 'custom-fields', 'page-attributes', 'post-formats', ),
+                'taxonomies'          => array( 'category', 'post_tag' ),
+                'hierarchical'        => false,
+                'public'              => true,
+                'show_ui'             => true,
+                'show_in_menu'        => true,
+                'menu_position'       => 5,
+                'menu_icon'           => 'dashicons-images-alt2',
+                'show_in_admin_bar'   => true,
+                'show_in_nav_menus'   => true,
+                'can_export'          => true,
+                'has_archive'         => false,     
+                'exclude_from_search' => false,
+                'publicly_queryable'  => true,
+                'rewrite'             => $rewrite,
+                'capability_type'     => 'page',
+            );
+
+            register_post_type(self::POST_TYPE, $args);
     	}
 	
     	/**

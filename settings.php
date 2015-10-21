@@ -1,7 +1,7 @@
 <?php
-if(!class_exists('WP_Plugin_Template_Settings'))
+if(!class_exists('PSP_Plugin_Template_Settings'))
 {
-	class WP_Plugin_Template_Settings
+	class PSP_Plugin_Template_Settings
 	{
 		/**
 		 * Construct the plugin object
@@ -19,34 +19,34 @@ if(!class_exists('WP_Plugin_Template_Settings'))
         public function admin_init()
         {
         	// register your plugin's settings
-        	register_setting('wp_plugin_template-group', 'setting_a');
-        	register_setting('wp_plugin_template-group', 'setting_b');
+        	register_setting('psp_plugin_template-group', 'setting_a');
+        	register_setting('psp_plugin_template-group', 'setting_b');
 
         	// add your settings section
         	add_settings_section(
-        	    'wp_plugin_template-section', 
-        	    'WP Plugin Template Settings', 
-        	    array(&$this, 'settings_section_wp_plugin_template'), 
-        	    'wp_plugin_template'
+        	    'psp_plugin_template-section', 
+        	    'PSP Plugin Template Settings', 
+        	    array(&$this, 'settings_section_psp_plugin_template'), 
+        	    'psp_plugin_template'
         	);
         	
         	// add your setting's fields
             add_settings_field(
-                'wp_plugin_template-setting_a', 
+                'psp_plugin_template-setting_a', 
                 'Setting A', 
                 array(&$this, 'settings_field_input_text'), 
-                'wp_plugin_template', 
-                'wp_plugin_template-section',
+                'psp_plugin_template', 
+                'psp_plugin_template-section',
                 array(
                     'field' => 'setting_a'
                 )
             );
             add_settings_field(
-                'wp_plugin_template-setting_b', 
+                'psp_plugin_template-setting_b', 
                 'Setting B', 
                 array(&$this, 'settings_field_input_text'), 
-                'wp_plugin_template', 
-                'wp_plugin_template-section',
+                'psp_plugin_template', 
+                'psp_plugin_template-section',
                 array(
                     'field' => 'setting_b'
                 )
@@ -54,10 +54,10 @@ if(!class_exists('WP_Plugin_Template_Settings'))
             // Possibly do additional admin_init tasks
         } // END public static function activate
         
-        public function settings_section_wp_plugin_template()
+        public function settings_section_psp_plugin_template()
         {
             // Think of this as help text for the section.
-            echo 'These settings do things for the WP Plugin Template.';
+            echo 'These settings do things for the PSP Plugin Template.';
         }
         
         /**
@@ -80,10 +80,10 @@ if(!class_exists('WP_Plugin_Template_Settings'))
         {
             // Add a page to manage this plugin's settings
         	add_options_page(
-        	    'WP Plugin Template Settings', 
-        	    'WP Plugin Template', 
+        	    'PSP Plugin Template Settings', 
+        	    'PSP Plugin Template', 
         	    'manage_options', 
-        	    'wp_plugin_template', 
+        	    'psp_plugin_template', 
         	    array(&$this, 'plugin_settings_page')
         	);
         } // END public function add_menu()
@@ -101,5 +101,5 @@ if(!class_exists('WP_Plugin_Template_Settings'))
         	// Render the settings template
         	include(sprintf("%s/templates/settings.php", dirname(__FILE__)));
         } // END public function plugin_settings_page()
-    } // END class WP_Plugin_Template_Settings
-} // END if(!class_exists('WP_Plugin_Template_Settings'))
+    } // END class PSP_Plugin_Template_Settings
+} // END if(!class_exists('PSP_Plugin_Template_Settings'))

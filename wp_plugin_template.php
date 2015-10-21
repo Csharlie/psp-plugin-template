@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: WP Plugin Template
+Plugin Name: PSP Plugin Template
 Plugin URI: https://bitbucket.org/Csharlie/wp-plugin-template
 Description: A simple wordpress plugin template
 Version: 1.0
@@ -9,9 +9,9 @@ Author URI: petersardy@gmail.com
 License: GPL2
 */
 
-if(!class_exists('WP_Plugin_Template'))
+if(!class_exists('PSP_Plugin_Template'))
 {
-	class WP_Plugin_Template
+	class PSP_Plugin_Template
 	{
 		/**
 		 * Construct the plugin object
@@ -20,7 +20,7 @@ if(!class_exists('WP_Plugin_Template'))
 		{
 			// Initialize Settings
 			require_once(sprintf("%s/settings.php", dirname(__FILE__)));
-			$WP_Plugin_Template_Settings = new WP_Plugin_Template_Settings();
+			$PSP_Plugin_Template_Settings = new PSP_Plugin_Template_Settings();
 
 			// Register custom post types
 			require_once(sprintf("%s/post-types/post_type_template.php", dirname(__FILE__)));
@@ -49,22 +49,22 @@ if(!class_exists('WP_Plugin_Template'))
 		// Add the settings link to the plugins page
 		function plugin_settings_link($links)
 		{
-			$settings_link = '<a href="options-general.php?page=wp_plugin_template">Settings</a>';
+			$settings_link = '<a href="options-general.php?page=psp_plugin_template">Settings</a>';
 			array_unshift($links, $settings_link);
 			return $links;
 		}
 
 
-	} // END class WP_Plugin_Template
-} // END if(!class_exists('WP_Plugin_Template'))
+	} // END class PSP_Plugin_Template
+} // END if(!class_exists('PSP_Plugin_Template'))
 
-if(class_exists('WP_Plugin_Template'))
+if(class_exists('PSP_Plugin_Template'))
 {
 	// Installation and uninstallation hooks
-	register_activation_hook(__FILE__, array('WP_Plugin_Template', 'activate'));
-	register_deactivation_hook(__FILE__, array('WP_Plugin_Template', 'deactivate'));
+	register_activation_hook(__FILE__, array('PSP_Plugin_Template', 'activate'));
+	register_deactivation_hook(__FILE__, array('PSP_Plugin_Template', 'deactivate'));
 
 	// instantiate the plugin class
-	$wp_plugin_template = new WP_Plugin_Template();
+	$psp_plugin_template = new PSP_Plugin_Template();
 
 }
