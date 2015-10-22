@@ -1,6 +1,5 @@
 <?php
 
-
 // create shortcode with parameters so that the user can define what's queried - default is to list all blog posts
 add_shortcode( 'custom-posts', 'custom_post_shortcode' );
 
