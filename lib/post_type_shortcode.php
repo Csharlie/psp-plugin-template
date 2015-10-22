@@ -29,9 +29,9 @@ function custom_post_shortcode( $atts ) {
     if ( $query->have_posts() ) { ?>
         <ul class="custom-posts">
             <?php while ( $query->have_posts() ) : $query->the_post(); ?>
-            <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-            </li>
+                <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                    <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                </li>
             <?php endwhile;
             wp_reset_postdata(); ?>
         </ul>
