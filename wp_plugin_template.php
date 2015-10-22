@@ -26,6 +26,12 @@ if(!class_exists('PSP_Plugin_Template'))
 			require_once(sprintf("%s/post-types/post_type_template.php", dirname(__FILE__)));
 			$Post_Type_Template = new Post_Type_Template();
 
+			// Register taxonomies
+			require_once(sprintf("%s/taxonomies/post_type_taxonomies.php", dirname(__FILE__)));
+
+			// Register shortcodes
+			require_once(sprintf("%s/shortcodes/post_type_shortcode.php", dirname(__FILE__)));
+
 			$plugin = plugin_basename(__FILE__);
 			add_filter("plugin_action_links_$plugin", array( $this, 'plugin_settings_link' ));
 		} // END public function __construct
@@ -68,3 +74,4 @@ if(class_exists('PSP_Plugin_Template'))
 	$psp_plugin_template = new PSP_Plugin_Template();
 
 }
+
