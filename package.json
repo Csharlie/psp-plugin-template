@@ -1,0 +1,25 @@
+{
+  "name": "psp-plugin-template",
+  "version": "1.0.0",
+  "description": "Gulp for PSP Plugin Template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://Csharlie@bitbucket.org/Csharlie/psp-plugin-template.git"
+  },
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "gulp"
+  ],
+  "author": "Peter Sardy",
+  "license": "GPL-2.0",
+  "homepage": "https://bitbucket.org/Csharlie/psp-plugin-template#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.0.4"
+  }
+}
