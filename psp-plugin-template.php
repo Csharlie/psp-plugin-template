@@ -6,7 +6,7 @@ Description: A simple wordpress plugin template
 Version: 1.0
 Author: Peter Sardy
 Author URI: petersardy@gmail.com
-License: GPL2
+License: GPL-2.0
 */
 
 if(!class_exists('PSP_Plugin_Template'))

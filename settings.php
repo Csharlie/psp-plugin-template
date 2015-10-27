@@ -6,12 +6,23 @@ if(!class_exists('PSP_Plugin_Template_Settings'))
 		/**
 		 * Construct the plugin object
 		 */
-		public function __construct()
-		{
+		public function __construct() {
+
+            // Register style sheet.
+            add_action( 'wp_enqueue_scripts', array( $this, 'psp_plugin_style' ) );
+
 			// register actions
             add_action('admin_init', array(&$this, 'admin_init'));
         	add_action('admin_menu', array(&$this, 'add_menu'));
 		} // END public function __construct
+
+        /**
+         * Register and enqueue style sheet.
+         */
+        public function psp_plugin_style() {
+            wp_register_style( 'psp-plugin-style', plugins_url( 'dist/css/style.css' ) );
+            wp_enqueue_style( 'psp-plugin-style' );
+        }
 		
         /**
          * hook into WP's admin_init action hook

@@ -17,7 +17,7 @@
   ],
   "author": "Peter Sardy",
   "license": "GPL-2.0",
-  "homepage": "https://bitbucket.org/Csharlie/psp-plugin-template#readme",
+  "homepage": "https://bitbucket.org/Csharlie/psp-plugin-template",
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-sass": "^2.0.4"

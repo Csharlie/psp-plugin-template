@@ -1,0 +1,19 @@
+{
+  "name": "psp-plugin-template",
+  "description": "Bower for PSP Plugin Template",
+  "authors": [
+    "Peter Sardy"
+  ],
+  "license": "GPL-2.0",
+  "keywords": [
+    "wordpress",
+    "plugin",
+    "gulp",
+    "bower"
+  ],
+  "moduleType": [],
+  "homepage": "",
+  "dependencies": {
+    "bourbon": "~4.2.6"
+  }
+}
