@@ -13,7 +13,7 @@
   ],
   "moduleType": [],
   "homepage": "",
-  "dependencies": {
+  "devDependencies": {
     "bourbon": "~4.2.6"
   }
 }
