@@ -1,3 +1,9 @@
 /* PSP Plugin Template Style */
 
 @import "bourbon";
+
+.custom-posts {
+	li {
+		box-shadow: none;
+	}
+}

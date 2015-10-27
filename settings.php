@@ -20,7 +20,7 @@ if(!class_exists('PSP_Plugin_Template_Settings'))
          * Register and enqueue style sheet.
          */
         public function psp_plugin_style() {
-            wp_register_style( 'psp-plugin-style', plugins_url( 'dist/css/style.css' ) );
+            wp_register_style( 'psp-plugin-style', plugins_url( 'psp-plugin-template/dist/css/style.css' ) );
             wp_enqueue_style( 'psp-plugin-style' );
         }
 		
