@@ -1,3 +1,4 @@
 $(document).ready(function(){
-	// Example one for gulp-concat
+	$('li');
+	// Example One for gulp-concat
 });

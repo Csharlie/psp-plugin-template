@@ -39,29 +39,20 @@ gulp.task('styles', function() {
 });
 
 /*
- * Gulp Concat
+ * Gulp Concat @ UglifyJS
  */
 
-gulp.task('concat', function(){
+gulp.task('scripts', function(){
   return gulp
   	.src(config.jsSrc + '/**/*.js')
   	.pipe(concat('all.js'))
   	.pipe(gulp.dest(config.jsDest))
-});
-
-/*
- * Gulp UglifyJS
- */
-
-gulp.task('minify-js', function() {
-  return gulp
-  	.src(config.jsSrc + '/**/*.js')
-    .pipe(uglify('all.min.js'))
+  	.pipe(uglify('all.min.js'))
     .pipe(gulp.dest(config.jsDest));
 });
 
 //Watch task
 gulp.task('watch',function() {
     gulp.watch(config.sassSrc + '/**/*.scss',['styles']);
-    gulp.watch(config.jsSrc + '/**/*.js',['concat', 'minify-js']);
+    gulp.watch(config.jsSrc + '/**/*.js',['scripts']);
 });
