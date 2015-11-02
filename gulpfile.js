@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var minify = require('gulp-minify-css');
+var rename = require("gulp-rename");
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglifyjs');
 
@@ -19,16 +20,20 @@ var config = {
 }
 
 /*
- * Gulp Sass
+ * Gulp Sass, Minify & Rename
  */
 
-gulp.task('sass', function(){
-  return gulp
-  	.src(config.sassPath + '/**/*.scss')
+gulp.task('styles', function() {
+  return gulp.src(config.sassSrc + '/**/*.scss')
     .pipe(sass({
     	outputStyle: 'expanded'
     }).on('error', sass.logError))
     .pipe(gulp.dest(config.cssDest))
+    .pipe(minify())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(gulp.dest(config.cssDest));
 });
 
 /*
@@ -46,7 +51,7 @@ gulp.task('concat', function(){
  * Gulp UglifyJS
  */
 
-gulp.task('compress', function() {
+gulp.task('minify-js', function() {
   return gulp
   	.src(config.jsSrc + '/**/*.js')
     .pipe(uglify('all.min.js'))
@@ -55,5 +60,6 @@ gulp.task('compress', function() {
 
 //Watch task
 gulp.task('watch',function() {
-    gulp.watch('./assets/sass/**/*.scss',['sass']);
+    gulp.watch(config.sassSrc + '/**/*.scss',['styles']);
+    gulp.watch(config.jsSrc + '/**/*.js',['concat', 'minify-js']);
 });
