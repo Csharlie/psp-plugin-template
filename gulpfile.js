@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var prefix = require('gulp-autoprefixer');
 var minify = require('gulp-minify-css');
 var rename = require("gulp-rename");
 var concat = require('gulp-concat');
@@ -20,7 +21,7 @@ var config = {
 }
 
 /*
- * Gulp Sass, Minify & Rename
+ * Gulp Sass, Minify, Autoprefix & Rename
  */
 
 gulp.task('styles', function() {
@@ -28,6 +29,7 @@ gulp.task('styles', function() {
     .pipe(sass({
     	outputStyle: 'expanded'
     }).on('error', sass.logError))
+    .pipe(prefix('last 2 versions'))
     .pipe(gulp.dest(config.cssDest))
     .pipe(minify())
     .pipe(rename({
