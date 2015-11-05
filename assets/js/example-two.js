@@ -1,3 +1,3 @@
-$(document).ready(function(){
+jQuery(document).ready(function($){
 	// Example two for gulp-concat
 });

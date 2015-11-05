@@ -23,7 +23,7 @@ if(!class_exists('PSP_Plugin_Template_Settings'))
 		 * Register and enqueue stylesheet.
 		 */
 		public function psp_plugin_style() {
-			wp_register_style( 'psp-plugin-style', plugins_url( 'psp-plugin-template/dist/css/style.min.css', __FILE__ ), array(), null, false );
+			wp_register_style( 'psp-plugin-style', plugins_url( 'dist/css/style.min.css', __FILE__ ), array(), null, false );
 			wp_enqueue_style( 'psp-plugin-style' );
 		}
 
@@ -31,7 +31,7 @@ if(!class_exists('PSP_Plugin_Template_Settings'))
 		 * Register and enqueue script.
 		 */
 		public function psp_plugin_script() {
-			wp_register_script( 'psp-plugin-script', plugins_url( 'psp-plugin-template/dist/js/all.min.js', __FILE__ ), array(), null, true );
+			wp_register_script( 'psp-plugin-script', plugins_url( 'dist/js/all.min.js', __FILE__ ), array(), null, true );
 			wp_enqueue_script( 'psp-plugin-script' );
 		}
 		
