@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: PSP Plugin Template
-Plugin URI: https://bitbucket.org/Csharlie/wp-plugin-template
+Plugin URI: https://github.org/Csharlie/wp-plugin-template
 Description: A simple wordpress plugin template
 Version: 1.0
 Author: Peter Sardy
